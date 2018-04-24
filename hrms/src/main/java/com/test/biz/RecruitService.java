@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface RecruitService {
     List<Recruit> getRecruit();
+    Recruit selectById(int id);
 }

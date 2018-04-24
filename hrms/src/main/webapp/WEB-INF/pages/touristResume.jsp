@@ -23,8 +23,17 @@
     <title></title>
 </head>
 <body>
-    <table>
-        <thead></thead>
-    </table>
+    <fieldset>
+        <legend>简历填写</legend>
+        <form method="post" action="touristResume1">
+            姓名：<input name="re_name" required="required">
+            年龄：<input name="re_age" required="required">
+            性别：<input name="re_sex" required="required">
+            地址：<input name="re_address" required="required">
+            学历：<input name="re_education" required="required">
+            经验：<input name="re_experience" required="required">
+            <input type="submit" value="提交简历">
+        </form>
+    </fieldset>
 </body>
 </html>

@@ -9,6 +9,8 @@ public class Resume {
     private String re_address;
     private String re_education;
     private String re_experience;
+    private String re_receive;
+    private int re_touristid;
 
     public int getRe_id() {
         return re_id;
@@ -72,5 +74,36 @@ public class Resume {
 
     public void setRe_experience(String re_experience) {
         this.re_experience = re_experience;
+    }
+
+    public String getRe_receive() {
+        return re_receive;
+    }
+
+    public void setRe_receive(String re_receive) {
+        this.re_receive = re_receive;
+    }
+
+    public int getRe_touristid() {
+        return re_touristid;
+    }
+
+    public void setRe_touristid(int re_touristid) {
+        this.re_touristid = re_touristid;
+    }
+
+    @Override
+    public String toString() {
+        return "Resume{" +
+                "re_id=" + re_id +
+                ", re_name='" + re_name + '\'' +
+                ", re_age=" + re_age +
+                ", re_sex='" + re_sex + '\'' +
+                ", re_vocation='" + re_vocation + '\'' +
+                ", re_address='" + re_address + '\'' +
+                ", re_education='" + re_education + '\'' +
+                ", re_experience='" + re_experience + '\'' +
+                ", re_receive='" + re_receive + '\'' +
+                '}';
     }
 }

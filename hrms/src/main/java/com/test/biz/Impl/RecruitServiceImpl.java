@@ -15,4 +15,9 @@ public class RecruitServiceImpl implements RecruitService {
     public List<Recruit> getRecruit() {
         return recruitMapper.getRecruit();
     }
+
+    @Override
+    public Recruit selectById(int id) {
+        return recruitMapper.selectById(id);
+    }
 }

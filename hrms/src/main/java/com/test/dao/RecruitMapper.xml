@@ -4,4 +4,7 @@
     <select id="getRecruit" resultType="com.test.model.Recruit">
         SELECT * FROM T_RECRUIT
     </select>
+    <select id="selectById" resultType="com.test.model.Recruit">
+        SELECT * FROM T_RECRUIT WHERE R_ID=#{r_id}
+    </select>
 </mapper>

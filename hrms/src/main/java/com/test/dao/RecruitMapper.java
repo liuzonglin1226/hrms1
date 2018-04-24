@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface RecruitMapper {
     List<Recruit> getRecruit();
+    Recruit selectById(int id);
 }

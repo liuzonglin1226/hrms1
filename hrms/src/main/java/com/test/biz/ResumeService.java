@@ -1,10 +1,10 @@
-package com.test.dao;
+package com.test.biz;
 
 import com.test.model.Resume;
 
 import java.util.List;
 
-public interface ResumeMapper {
+public interface ResumeService {
     void saveResume(Resume resume);
     List<Resume> getResume();
     List<Resume> getResumeById(int id);

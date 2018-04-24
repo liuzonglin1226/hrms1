@@ -26,6 +26,7 @@
     <fieldset>
         <legend>游客主界面</legend>
         <a href="touristLookRecruit" target="rightWindow">查看招聘信息</a>
+        <a href="lookTouristResume" target="rightWindow">查看已提交简历</a>
         <a href="index1">注销</a>
 
     </fieldset>

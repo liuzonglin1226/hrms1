@@ -52,7 +52,7 @@
                     <td>${list.r_experience}</td>
                     <td>${list.r_num}</td>
                     <td>
-                        <form method="post" action="">
+                        <form method="post" action="touristResume">
                             <input type="hidden" name="id" value="${list.r_id}">
                             <input type="submit" value="投递简历">
                         </form>

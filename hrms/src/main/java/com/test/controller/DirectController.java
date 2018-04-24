@@ -2,6 +2,9 @@ package com.test.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class DirectController {
     @RequestMapping("/tourist")
@@ -29,7 +32,8 @@ public class DirectController {
         return "../../index1";
     }
     @RequestMapping("/touristResume")
-    public String touristResume()throws Exception{
+    public String touristResume(int id,HttpSession session)throws Exception{
+        session.setAttribute("recruitId",id);
         return "touristResume";
     }
 }

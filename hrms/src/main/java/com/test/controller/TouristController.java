@@ -17,9 +17,9 @@ public class TouristController {
     public String touristLogin(Tourist tourist, HttpSession session)throws Exception{
         Tourist tourist1=touristService.selectByNameAndPass(tourist);
         if(tourist1==null){
-            session.setAttribute("tourist",tourist);
             return "touristLogin";
         }else {
+            session.setAttribute("tourist",tourist1);
             return "touristMainMenu";
         }
     }

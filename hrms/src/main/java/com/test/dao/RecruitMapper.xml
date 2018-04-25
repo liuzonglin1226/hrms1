@@ -1,10 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.test.dao.RecruitMapper">
+    <update id="saveRecruit">
+        INSERT INTO T_RECRUIT(R_VOCATION, R_AGE, R_SEX, R_SALARY, R_CITY, R_EDUCATION, R_EXPERIENCE, R_NUM,R_STATE)
+        VALUES (#{r_vocation},#{r_age},#{r_sex},#{r_salary},#{r_city},#{r_education},#{r_experience},#{r_num},#{r_state})
+    </update>
+    <update id="updateRecruit">
+        UPDATE T_RECRUIT
+        <set>
+            <if test="r_vocation!=null">
+                r_vocation=#{r_vocation},
+            </if>
+            <if test="r_age!=null">
+                r_age=#{r_age},
+            </if>
+            <if test="r_sex!=null">
+                r_sex=#{r_sex},
+            </if>
+            <if test="r_salary!=null">
+                r_salary=#{r_salary},
+            </if>
+            <if test="r_city!=null">
+                r_city=#{r_city},
+            </if>
+            <if test="r_education!=null">
+                r_education=#{r_education},
+            </if>
+            <if test="r_experience!=null">
+                r_experience=#{r_experience},
+            </if>
+            <if test="r_num!=null">
+                r_num=#{r_num},
+            </if>
+            <if test="r_state!=null">
+                r_state=#{r_state}
+            </if>
+        </set>
+        WHERE r_id=#{r_id}
+    </update>
+    <delete id="deleteRecruit">
+        DELETE FROM T_RECRUIT WHERE R_ID=#{r_id}
+    </delete>
     <select id="getRecruit" resultType="com.test.model.Recruit">
         SELECT * FROM T_RECRUIT
     </select>
     <select id="selectById" resultType="com.test.model.Recruit">
         SELECT * FROM T_RECRUIT WHERE R_ID=#{r_id}
+    </select>
+    <select id="selectByVocation" resultType="com.test.model.Recruit">
+        SELECT * FROM T_RECRUIT WHERE R_VOCATION=#{r_vocation}
     </select>
 </mapper>

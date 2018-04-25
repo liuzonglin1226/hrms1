@@ -29,6 +29,7 @@
             姓名：<input name="re_name" required="required">
             年龄：<input name="re_age" required="required">
             性别：<input name="re_sex" required="required">
+            电话：<input name="re_phone" required="required">
             地址：<input name="re_address" required="required">
             学历：<input name="re_education" required="required">
             经验：<input name="re_experience" required="required">

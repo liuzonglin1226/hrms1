@@ -11,6 +11,7 @@ public class Recruit {
     private String r_experience;
     private int r_num;
     private Tourist tourist;
+    private String r_state;
 
     public int getR_id() {
         return r_id;
@@ -90,5 +91,30 @@ public class Recruit {
 
     public void setTourist(Tourist tourist) {
         this.tourist = tourist;
+    }
+
+    public String getR_state() {
+        return r_state;
+    }
+
+    public void setR_state(String r_state) {
+        this.r_state = r_state;
+    }
+
+    @Override
+    public String toString() {
+        return "Recruit{" +
+                "r_id=" + r_id +
+                ", r_vocation='" + r_vocation + '\'' +
+                ", r_age=" + r_age +
+                ", r_sex='" + r_sex + '\'' +
+                ", r_salary=" + r_salary +
+                ", r_city='" + r_city + '\'' +
+                ", r_education='" + r_education + '\'' +
+                ", r_experience='" + r_experience + '\'' +
+                ", r_num=" + r_num +
+                ", tourist=" + tourist +
+                ", r_state='" + r_state + '\'' +
+                '}';
     }
 }

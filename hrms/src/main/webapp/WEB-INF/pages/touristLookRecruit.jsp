@@ -41,23 +41,27 @@
         </thead>
         <tbody>
             <c:forEach items="${sessionScope.recruitList}" var="list">
-                <tr>
-                    <td>${list.r_id}</td>
-                    <td>${list.r_vocation}</td>
-                    <td>${list.r_age}</td>
-                    <td>${list.r_sex}</td>
-                    <td>${list.r_city}</td>
-                    <td>${list.r_salary}</td>
-                    <td>${list.r_education}</td>
-                    <td>${list.r_experience}</td>
-                    <td>${list.r_num}</td>
-                    <td>
-                        <form method="post" action="touristResume">
-                            <input type="hidden" name="id" value="${list.r_id}">
-                            <input type="submit" value="投递简历">
-                        </form>
-                    </td>
-                </tr>
+                <c:choose>
+                    <c:when test="${list.r_state=='已上传'}">
+                        <tr>
+                            <td>${list.r_id}</td>
+                            <td>${list.r_vocation}</td>
+                            <td>${list.r_age}</td>
+                            <td>${list.r_sex}</td>
+                            <td>${list.r_city}</td>
+                            <td>${list.r_salary}</td>
+                            <td>${list.r_education}</td>
+                            <td>${list.r_experience}</td>
+                            <td>${list.r_num}</td>
+                            <td>
+                                <form method="post" action="touristResume">
+                                    <input type="hidden" name="id" value="${list.r_id}">
+                                    <input type="submit" value="投递简历">
+                                </form>
+                            </td>
+                        </tr>
+                    </c:when>
+                </c:choose>
             </c:forEach>
         </tbody>
     </table>

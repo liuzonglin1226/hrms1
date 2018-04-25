@@ -20,4 +20,50 @@ public class RecruitController {
         session.setAttribute("recruitList",list);
         return "touristLookRecruit";
     }
+    @RequestMapping("/managerUpdateRecruit")
+    public String managerUpdateRecruit(Recruit recruit,HttpSession session)throws Exception{
+        if(recruit.getR_state().equals("未上传")){
+            recruitService.updateRecruit(recruit);
+            List<Recruit> list=recruitService.getRecruit();
+            session.setAttribute("managerLookRecruit",list);
+        }
+        return "managerLookRecruit";
+    }
+    @RequestMapping("/managerSaveRecruit")
+    public String managerSaveRecruit(Recruit recruit,HttpSession session)throws Exception{
+        recruit.setR_state("未上传");
+        Recruit recruit1=recruitService.selectByVocation(recruit.getR_vocation());
+        if(recruit1==null){
+            recruitService.saveRecruit(recruit);
+            List<Recruit> list=recruitService.getRecruit();
+            session.setAttribute("managerLookRecruit",list);
+        }
+        return "managerLookRecruit";
+    }
+    @RequestMapping("/managerUpRecruit")
+    public String managerUpRecruit(Recruit recruit,HttpSession session)throws Exception{
+        recruit.setR_state("已上传");
+        System.out.println(recruit);
+        recruitService.updateRecruit(recruit);
+        List<Recruit> list=recruitService.getRecruit();
+        session.setAttribute("managerLookRecruit",list);
+        return "managerLookRecruit";
+    }
+    @RequestMapping("/managerDownRecruit")
+    public String managerDownRecruit(Recruit recruit,HttpSession session)throws Exception{
+        recruit.setR_state("未上传");
+        recruitService.updateRecruit(recruit);
+        List<Recruit> list=recruitService.getRecruit();
+        session.setAttribute("managerLookRecruit",list);
+        return "managerLookRecruit";
+    }
+    @RequestMapping("/managerDeleteRecruit")
+    public String managerDeleteRecruit(Recruit recruit,HttpSession session)throws Exception{
+        if(recruit.getR_state().equals("未上传")){
+            recruitService.deleteRecruit(recruit);
+            List<Recruit> list=recruitService.getRecruit();
+            session.setAttribute("managerLookRecruit",list);
+        }
+        return "managerLookRecruit";
+    }
 }

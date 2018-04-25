@@ -23,6 +23,10 @@
     <title></title>
 </head>
 <body>
-2222
+<fieldset>
+    <legend>管理员界面</legend>
+    <a href="index1">返回</a>
+    <a href="managerLogin" >登录</a>
+</fieldset>
 </body>
 </html>

@@ -1,5 +1,6 @@
 package com.test.controller;
 
+import com.test.model.Manager;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -35,5 +36,14 @@ public class DirectController {
     public String touristResume(int id,HttpSession session)throws Exception{
         session.setAttribute("recruitId",id);
         return "touristResume";
+    }
+    @RequestMapping("/managerInvite")
+    public String managerInvite(int id,HttpSession session)throws Exception{
+        session.setAttribute("touristId1",id);
+        return "managerInvite";
+    }
+    @RequestMapping("/managerLogin")
+    public String managerLogin()throws Exception{
+        return "managerLogin";
     }
 }

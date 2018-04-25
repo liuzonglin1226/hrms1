@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.dao.ManagementMapper">
+    <insert id="saveManagement">
+        INSERT INTO T_MANAGEMENT(MA_NAME, MA_NUM) VALUES (#{ma_name},#{ma_num})
+    </insert>
+    <update id="updateManagement">
+        UPDATE T_MANAGEMENT
+        <set>
+            <if test="ma_name!=null">
+                ma_name=#{ma_name},
+            </if>
+            <if test="ma_num!=0">
+                ma_num=#{ma_num}
+            </if>
+        </set>
+        WHERE MA_ID=#{ma_id}
+    </update>
+    <delete id="deleteManagement">
+        DELETE FROM T_MANAGEMENT WHERE MA_ID=#{ma_id}
+    </delete>
+    <select id="selectManagement" resultType="com.test.model.Management">
+        SELECT * FROM T_MANAGEMENT
+    </select>
+</mapper>

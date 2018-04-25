@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.dao.VocationMapper">
+    <insert id="saveVocation">
+        INSERT INTO T_VOCATION(V_NAME, V_MANAGEMENTID, V_SALARY, V_NUM)VALUES (#{v_name},#{v_managementid},#{v_salary},#{v_num})
+    </insert>
+    <update id="updateVocation">
+        UPDATE T_VOCATION
+        <set>
+            <if test="v_name!=null">
+                v_name=#{v_name},
+            </if>
+            <if test="v_managementid!=0">
+                v_managementid=#{v_managementid},
+            </if>
+            <if test="v_salary!=null">
+                v_salary=#{v_salary},
+            </if>
+            <if test="v_num!=0">
+                v_num=#{v_num}
+            </if>
+        </set>
+        WHERE V_ID=#{v_id}
+    </update>
+    <delete id="deleteVocation">
+        DELETE FROM T_VOCATION WHERE V_ID=#{v_id}
+    </delete>
+    <select id="selectVocationByManagementId" resultType="com.test.model.Vocation">
+        SELECT * FROM T_VOCATION
+    </select>
+</mapper>

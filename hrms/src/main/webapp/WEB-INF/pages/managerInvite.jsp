@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2018/4/23
-  Time: 14:05
+  Date: 2018/4/25
+  Time: 12:38
   To change this template use File | Settings | File Templates.
 --%>
 <%--
@@ -21,14 +21,23 @@
 <head>
     <base href="<%=basePath%>"/>
     <title></title>
+    <style type="text/css">
+        tr{
+            border:1px solid;
+        }
+        td{
+            border:1px solid;
+        }
+    </style>
 </head>
 <body>
     <fieldset>
-        <legend>游客主界面</legend>
-        <a href="touristLookRecruit" target="rightWindow">查看招聘信息</a>
-        <a href="lookTouristResume" target="rightWindow">查看已提交简历</a>
-        <a href="touristLookInvitation" target="rightWindow">查看面试邀请</a>
-        <a href="index1">注销</a>
+        <legend>面试填写</legend>
+        <form method="post" action="managerInviteTourist">
+            面试时间：<input type="date" name="i_time" required="required">
+            面试地点：<input name="i_address" required="required">
+            <input type="submit" value="邀请面试">
+        </form>
     </fieldset>
 </body>
 </html>

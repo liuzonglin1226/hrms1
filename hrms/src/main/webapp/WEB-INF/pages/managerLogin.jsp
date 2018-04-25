@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2018/4/23
-  Time: 14:05
+  Date: 2018/4/25
+  Time: 9:42
   To change this template use File | Settings | File Templates.
 --%>
 <%--
@@ -23,12 +23,14 @@
     <title></title>
 </head>
 <body>
-    <fieldset>
-        <legend>游客主界面</legend>
-        <a href="touristLookRecruit" target="rightWindow">查看招聘信息</a>
-        <a href="lookTouristResume" target="rightWindow">查看已提交简历</a>
-        <a href="touristLookInvitation" target="rightWindow">查看面试邀请</a>
-        <a href="index1">注销</a>
-    </fieldset>
+<fieldset>
+    <legend>管理员登录</legend>
+    <form method="post" action="managerLogin1">
+        请输入帐号：<input name="m_name" required="required"></br>
+        请输入密码：<input name="m_pass" type="password" required="required"><br>
+        <a href="manager">返回</a>
+        <input type="submit" value="登录">
+    </form>
+</fieldset>
 </body>
 </html>

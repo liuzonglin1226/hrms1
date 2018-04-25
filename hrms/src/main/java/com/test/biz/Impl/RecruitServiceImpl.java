@@ -20,4 +20,24 @@ public class RecruitServiceImpl implements RecruitService {
     public Recruit selectById(int id) {
         return recruitMapper.selectById(id);
     }
+
+    @Override
+    public Recruit selectByVocation(String vocation) {
+        return recruitMapper.selectByVocation(vocation);
+    }
+
+    @Override
+    public void saveRecruit(Recruit recruit) {
+        recruitMapper.saveRecruit(recruit);
+    }
+
+    @Override
+    public void updateRecruit(Recruit recruit) {
+        recruitMapper.updateRecruit(recruit);
+    }
+
+    @Override
+    public void deleteRecruit(Recruit recruit) {
+        recruitMapper.deleteRecruit(recruit);
+    }
 }

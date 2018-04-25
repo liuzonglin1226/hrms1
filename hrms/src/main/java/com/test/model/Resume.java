@@ -11,6 +11,7 @@ public class Resume {
     private String re_experience;
     private String re_receive;
     private int re_touristid;
+    private String re_phone;
 
     public int getRe_id() {
         return re_id;
@@ -90,6 +91,14 @@ public class Resume {
 
     public void setRe_touristid(int re_touristid) {
         this.re_touristid = re_touristid;
+    }
+
+    public String getRe_phone() {
+        return re_phone;
+    }
+
+    public void setRe_phone(String re_phone) {
+        this.re_phone = re_phone;
     }
 
     @Override

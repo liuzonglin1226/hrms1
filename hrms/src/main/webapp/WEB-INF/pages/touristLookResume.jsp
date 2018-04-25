@@ -22,12 +22,20 @@
 <head>
     <base href="<%=basePath%>"/>
     <title></title>
+    <style type="text/css">
+        tr{
+            border:1px solid;
+        }
+        td{
+            border:1px solid;
+        }
+    </style>
 </head>
 <body>
     <table>
         <thead>
             <tr>
-                <td>简历编号</td><td>姓名</td><td>年龄</td><td>性别</td><td>职位</td><td>地址</td><td>学历</td><td>经验</td><td>简历状态</td><td></td>
+                <td>简历编号</td><td>姓名</td><td>年龄</td><td>性别</td><td>职位</td><td>电话</td><td>地址</td><td>学历</td><td>经验</td><td>简历状态</td><td></td>
             </tr>
         </thead>
         <tbody>
@@ -38,19 +46,11 @@
                     <td>${list.re_age}</td>
                     <td>${list.re_sex}</td>
                     <td>${list.re_vocation}</td>
+                    <td>${list.re_phone}</td>
                     <td>${list.re_address}</td>
                     <td>${list.re_education}</td>
                     <td>${list.re_experience}</td>
                     <td>${list.re_receive}</td>
-                    <td>
-                        <c:choose>
-                            <c:when test="${list.re_receive=='通知面试'}">
-                                <form method="post" action="">
-                                    <input type="submit"value="面试">
-                                </form>
-                            </c:when>
-                        </c:choose>
-                    </td>
                 </tr>
             </c:forEach>
         </tbody>

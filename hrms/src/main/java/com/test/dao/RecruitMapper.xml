@@ -11,13 +11,13 @@
             <if test="r_vocation!=null">
                 r_vocation=#{r_vocation},
             </if>
-            <if test="r_age!=null">
+            <if test="r_age!=0">
                 r_age=#{r_age},
             </if>
             <if test="r_sex!=null">
                 r_sex=#{r_sex},
             </if>
-            <if test="r_salary!=null">
+            <if test="r_salary!=0">
                 r_salary=#{r_salary},
             </if>
             <if test="r_city!=null">
@@ -29,7 +29,7 @@
             <if test="r_experience!=null">
                 r_experience=#{r_experience},
             </if>
-            <if test="r_num!=null">
+            <if test="r_num!=0">
                 r_num=#{r_num},
             </if>
             <if test="r_state!=null">

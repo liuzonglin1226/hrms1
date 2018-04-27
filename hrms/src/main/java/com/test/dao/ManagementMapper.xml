@@ -22,4 +22,10 @@
     <select id="selectManagement" resultType="com.test.model.Management">
         SELECT * FROM T_MANAGEMENT
     </select>
+    <select id="selectByName" resultType="com.test.model.Management">
+        SELECT * FROM T_MANAGEMENT WHERE MA_NAME=#{ma_name}
+    </select>
+    <select id="selectById" resultType="com.test.model.Management">
+        SELECT * FROM T_MANAGEMENT WHERE MA_ID=#{ma_id}
+    </select>
 </mapper>

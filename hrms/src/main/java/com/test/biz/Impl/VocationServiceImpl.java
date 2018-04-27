@@ -28,6 +28,16 @@ public class VocationServiceImpl implements VocationService {
     }
 
     @Override
+    public Vocation selectByName(Vocation vocation) {
+        return vocationMapper.selectByName(vocation);
+    }
+
+    @Override
+    public Vocation selectByNameAndManagementId(Vocation vocation) {
+        return vocationMapper.selectByNameAndManagementId(vocation);
+    }
+
+    @Override
     public List<Vocation> selectVocationByManagementId(int id) {
         return vocationMapper.selectVocationByManagementId(id);
     }

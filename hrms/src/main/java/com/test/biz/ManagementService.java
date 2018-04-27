@@ -9,4 +9,6 @@ public interface ManagementService {
     void updateManagement(Management management);
     void deleteManagement(Management management);
     List<Management> selectManagement();
+    Management selectByName(Management management);
+    Management selectById(Management management);
 }

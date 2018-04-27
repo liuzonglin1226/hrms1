@@ -28,4 +28,10 @@
     <select id="selectVocationByManagementId" resultType="com.test.model.Vocation">
         SELECT * FROM T_VOCATION
     </select>
+    <select id="selectByName" resultType="com.test.model.Vocation">
+        SELECT * FROM T_VOCATION WHERE V_NAME=#{v_name}
+    </select>
+    <select id="selectByNameAndManagementId" resultType="com.test.model.Vocation">
+        SELECT * FROM T_VOCATION WHERE V_NAME=#{v_name} AND V_MANAGEMENTID=#{v_managementid}
+    </select>
 </mapper>

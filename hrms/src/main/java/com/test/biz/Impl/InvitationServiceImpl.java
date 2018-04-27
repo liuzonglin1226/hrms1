@@ -27,4 +27,9 @@ public class InvitationServiceImpl implements InvitationService {
     public void deleteInvitationById(int id) {
         invitationMapper.deleteInvitationById(id);
     }
+
+    @Override
+    public void updateState(Invitation invitation) {
+        invitationMapper.updateState(invitation);
+    }
 }

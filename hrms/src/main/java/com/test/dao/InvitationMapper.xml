@@ -2,10 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.test.dao.InvitationMapper">
     <insert id="saveInvitation">
-        INSERT INTO T_INVITATION(I_TOURISTID, I_TIME, I_ADDRESS, I_STATE) VALUES(#{i_touristid},#{i_time},#{i_address},#{i_state})
+        INSERT INTO T_INVITATION(I_TOURISTID, I_TIME, I_ADDRESS, I_STATE,I_RESUMEID) VALUES(#{i_touristid},#{i_time},#{i_address},#{i_state},#{i_resumeid})
     </insert>
+    <update id="updateState">
+        UPDATE T_INVITATION SET I_STATE=#{i_state} WHERE I_ID=#{i_id}
+    </update>
     <delete id="deleteInvitationById">
-        DELETE FROM T_INVITATION WHERE I_TOURISTID=#{i_touristid}
+        DELETE FROM T_INVITATION WHERE I_ID=#{i_id}
     </delete>
     <select id="selectByTouristId" resultType="com.test.model.Invitation">
         SELECT * FROM T_INVITATION WHERE I_TOURISTID=#{i_touristid}

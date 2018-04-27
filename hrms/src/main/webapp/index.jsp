@@ -26,7 +26,7 @@
     <frame>
 
     </frame>
-    <frameset cols="30%,*">
+    <frameset cols="15%,*">
         <frame src="index1.jsp" noresize="noresize" >
         <frame src="index2.jsp" noresize="noresize" name="rightWindow">
     </frameset>

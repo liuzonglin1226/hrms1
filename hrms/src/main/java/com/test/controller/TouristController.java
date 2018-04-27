@@ -1,8 +1,10 @@
 package com.test.controller;
 
 import com.test.biz.InvitationService;
+import com.test.biz.ResumeService;
 import com.test.biz.TouristService;
 import com.test.model.Invitation;
+import com.test.model.Resume;
 import com.test.model.Tourist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +20,8 @@ public class TouristController {
     private TouristService touristService;
     @Autowired
     private InvitationService invitationService;
+    @Autowired
+    private ResumeService resumeService;
     @RequestMapping("/touristLogin1")
     public String touristLogin(Tourist tourist, HttpSession session)throws Exception{
         Tourist tourist1=touristService.selectByNameAndPass(tourist);
@@ -44,8 +48,16 @@ public class TouristController {
         session.setAttribute("touristLookInvitation",list);
         return "touristLookInvitation";
     }
-    /*@RequestMapping("/touristInviting")
-    public String touristInviting()throws Exception{
-
-    }*/
+    @RequestMapping("/touristInviting")
+    public String touristInviting(Invitation invitation,HttpSession session)throws Exception{
+        invitationService.deleteInvitationById(invitation.getI_id());
+        Resume resume=new Resume();
+        resume.setRe_id(invitation.getI_resumeid());
+        resume.setRe_receive("等待面试结果");
+        resumeService.updateResume(resume);
+        Tourist tourist= (Tourist) session.getAttribute("tourist");
+        List<Invitation> list=invitationService.selectByTouristId(tourist.getT_id());
+        session.setAttribute("touristLookInvitation",list);
+        return "touristLookInvitation";
+    }
 }

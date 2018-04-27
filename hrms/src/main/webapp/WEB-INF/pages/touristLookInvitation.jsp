@@ -51,6 +51,8 @@
                             <td>${list.i_state}</td>
                             <td>
                                 <form method="post" action="touristInviting">
+                                    <input type="hidden" name="i_id" value="${list.i_id}">
+                                    <input type="hidden" name="i_resumeid" value="${list.i_resumeid}">
                                     <input type="submit"value="面试">
                                 </form>
                             </td>

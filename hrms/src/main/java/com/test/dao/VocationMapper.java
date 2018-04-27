@@ -8,5 +8,7 @@ public interface VocationMapper {
     void saveVocation(Vocation vocation);
     void updateVocation(Vocation vocation);
     void deleteVocation(Vocation vocation);
+    Vocation selectByName(Vocation vocation);
+    Vocation selectByNameAndManagementId(Vocation vocation);
     List<Vocation> selectVocationByManagementId(int id);
 }

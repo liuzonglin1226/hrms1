@@ -42,9 +42,13 @@ public class ManagerController {
     @RequestMapping("/managerInviteTourist")
     public String managerInviteTourist(Invitation invitation,HttpSession session)throws Exception{
         int id= (int) session.getAttribute("touristId1");
+        int resumeId= (int) session.getAttribute("resumeId");
         invitation.setI_touristid(id);
+        invitation.setI_resumeid(resumeId);
         invitation.setI_state("通知面试");
         invitationService.saveInvitation(invitation);
+        List<Resume> list=resumeService.getResume();
+        session.setAttribute("managerLookResume",list);
         return "managerLookResume";
     }
     @RequestMapping("/managerLookRecruit")

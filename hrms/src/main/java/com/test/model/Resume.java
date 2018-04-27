@@ -12,6 +12,7 @@ public class Resume {
     private String re_receive;
     private int re_touristid;
     private String re_phone;
+    private int re_recruitid;
 
     public int getRe_id() {
         return re_id;
@@ -99,6 +100,14 @@ public class Resume {
 
     public void setRe_phone(String re_phone) {
         this.re_phone = re_phone;
+    }
+
+    public int getRe_recruitid() {
+        return re_recruitid;
+    }
+
+    public void setRe_recruitid(int re_recruitid) {
+        this.re_recruitid = re_recruitid;
     }
 
     @Override

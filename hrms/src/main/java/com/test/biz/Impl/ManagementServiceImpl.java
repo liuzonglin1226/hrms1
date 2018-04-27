@@ -2,12 +2,12 @@ package com.test.biz.Impl;
 
 import com.test.biz.ManagementService;
 import com.test.dao.ManagementMapper;
-import com.test.dao.ManagerMapper;
-import com.test.model.Management;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+        import com.test.dao.ManagerMapper;
+        import com.test.model.Management;
+        import org.springframework.beans.factory.annotation.Autowired;
+        import org.springframework.stereotype.Service;
 
-import java.util.List;
+        import java.util.List;
 
 @Service
 public class ManagementServiceImpl implements ManagementService {
@@ -31,5 +31,15 @@ public class ManagementServiceImpl implements ManagementService {
     @Override
     public List<Management> selectManagement() {
         return managementMapper.selectManagement();
+    }
+
+    @Override
+    public Management selectByName(Management management) {
+        return managementMapper.selectByName(management);
+    }
+
+    @Override
+    public Management selectById(Management management) {
+        return managementMapper.selectById(management);
     }
 }

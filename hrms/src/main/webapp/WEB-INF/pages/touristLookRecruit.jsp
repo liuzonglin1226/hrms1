@@ -42,7 +42,7 @@
         <tbody>
             <c:forEach items="${sessionScope.recruitList}" var="list">
                 <c:choose>
-                    <c:when test="${list.r_state=='已上传'}">
+                    <c:when test="${list.r_state=='已上传'&&list.r_num>0}">
                         <tr>
                             <td>${list.r_id}</td>
                             <td>${list.r_vocation}</td>

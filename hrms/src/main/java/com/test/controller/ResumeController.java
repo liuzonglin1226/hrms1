@@ -24,6 +24,7 @@ public class ResumeController {
         int id= (int) session.getAttribute("recruitId");
         Tourist tourist= (Tourist) session.getAttribute("tourist");
         Recruit recruit=recruitService.selectById(id);
+        resume.setRe_recruitid(id);
         resume.setRe_vocation(recruit.getR_vocation());
         resume.setRe_receive("等待检阅简历");
         resume.setRe_touristid(tourist.getT_id());

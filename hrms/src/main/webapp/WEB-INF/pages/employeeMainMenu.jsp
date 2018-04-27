@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2018/4/25
-  Time: 9:44
+  Date: 2018/4/27
+  Time: 14:41
   To change this template use File | Settings | File Templates.
 --%>
 <%--
@@ -23,12 +23,6 @@
     <title></title>
 </head>
 <body>
-<fieldset>
-    <legend>管理员主界面</legend>
-    <a href="managerLookRecruit" target="rightWindow">查看招聘信息</a>
-    <a href="managerLookResume" target="rightWindow">查看收到简历</a>
-    <a href="managerLookManagement" target="rightWindow">查看部门</a>
-    <a href="index1">注销</a>
-</fieldset>
+333333333333
 </body>
 </html>

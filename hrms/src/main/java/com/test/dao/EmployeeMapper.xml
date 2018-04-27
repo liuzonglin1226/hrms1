@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.dao.EmployeeMapper">
+    <insert id="saveEmployee">
+        INSERT INTO T_EMPLOYEE(E_NAME, E_PASS, E_MANAGEMENTID, E_VOCATIONID, E_ADDRESS, E_PHONE, E_AGE,E_NAMER)
+        VALUES (#{e_name},#{e_pass},#{e_managementid},#{e_vocationid},#{e_address},#{e_phone},#{e_age},#{e_namer})
+    </insert>
+    <update id="updateEmployee">
+        UPDATE T_EMPLOYEE
+        <set>
+            <if test="e_name!=null">
+                e_name=#{e_name},
+            </if>
+            <if test="e_pass!=null">
+                e_pass=#{e_pass},
+            </if>
+            <if test="e_managementid!=null">
+                e_managementid=#{e_managementid},
+            </if>
+            <if test="e_vocationid!=null">
+                e_vocationid=#{e_vocationid}
+            </if>
+        </set>
+        WHERE E_ID=#{e_id}
+    </update>
+    <delete id="deleteEmployee">
+        DELETE FROM T_EMPLOYEE WHERE E_ID=#{e_id}
+    </delete>
+    <select id="selectByVocationId" resultType="com.test.model.Employee">
+        SELECT * FROM T_EMPLOYEE WHERE E_VOCATIONID=#{e_vocationid}
+    </select>
+    <select id="selectByName" resultType="com.test.model.Employee">
+        SELECT * FROM T_EMPLOYEE WHERE E_NAME=#{e_name}
+    </select>
+    <select id="selectByNameAndPass" resultType="com.test.model.Employee">
+        SELECT * FROM T_EMPLOYEE WHERE E_NAME=#{e_name} AND E_PASS=#{e_pass}
+    </select>
+</mapper>

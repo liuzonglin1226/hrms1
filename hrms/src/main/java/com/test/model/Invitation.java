@@ -6,6 +6,7 @@ public class Invitation {
     private String i_time;
     private String i_address;
     private String i_state;
+    private int i_resumeid;
 
     public int getI_id() {
         return i_id;
@@ -45,5 +46,13 @@ public class Invitation {
 
     public void setI_state(String i_state) {
         this.i_state = i_state;
+    }
+
+    public int getI_resumeid() {
+        return i_resumeid;
+    }
+
+    public void setI_resumeid(int i_resumeid) {
+        this.i_resumeid = i_resumeid;
     }
 }

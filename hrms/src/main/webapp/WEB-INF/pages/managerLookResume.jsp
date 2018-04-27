@@ -22,6 +22,14 @@
 <head>
     <base href="<%=basePath%>"/>
     <title></title>
+    <style type="text/css">
+        tr{
+            border: 1px solid;
+        }
+        td{
+            border: 1px solid;
+        }
+    </style>
 </head>
 <body>
 <table>
@@ -44,12 +52,33 @@
             <td>${list.re_experience}</td>
             <td>${list.re_receive}</td>
             <td>${list.re_touristid}</td>
-            <td>
-                <form method="post" action="managerInvite">
-                    <input type="hidden" name="id" value="${list.re_touristid}">
-                    <input type="submit" value="填写面试邀请">
-                </form>
-            </td>
+            <c:choose>
+                <c:when test="${list.re_receive=='等待检阅简历'}">
+                    <td>
+                        <form method="post" action="managerInvite">
+                            <input type="hidden" name="re_touristid" value="${list.re_touristid}">
+                            <input type="hidden" name="re_id" value="${list.re_id}">
+                            <input type="submit" value="填写面试邀请">
+                        </form>
+                    </td>
+                </c:when>
+            </c:choose>
+            <c:choose>
+                <c:when test="${list.re_receive=='等待面试结果'}">
+                    <td>
+                        <form method="post" action="managerEmploy">
+                            <input type="hidden" name="re_id" value="${list.re_id}">
+                            <input type="hidden" name="re_phone" value="${list.re_phone}">
+                            <input type="hidden" name="re_vocation" value="${list.re_vocation}">
+                            <input type="hidden" name="re_recruitid" value="${list.re_recruitid}">
+                            <input type="hidden" name="re_name" value="${list.re_name}">
+                            <input type="hidden" name="re_age" value="${list.re_age}">
+                            <input type="hidden" name="re_address" value="${list.re_address}">
+                            <input type="submit" value="录用该用户">
+                        </form>
+                    </td>
+                </c:when>
+            </c:choose>
         </tr>
     </c:forEach>
     </tbody>

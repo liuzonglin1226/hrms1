@@ -37,13 +37,17 @@ public class DirectController {
         session.setAttribute("recruitId",id);
         return "touristResume";
     }
-    @RequestMapping("/managerInvite")
-    public String managerInvite(int id,HttpSession session)throws Exception{
-        session.setAttribute("touristId1",id);
-        return "managerInvite";
-    }
+
     @RequestMapping("/managerLogin")
     public String managerLogin()throws Exception{
         return "managerLogin";
+    }
+    @RequestMapping("/returnManagerLookManagement")
+    public  String  returnManagerLookManagement(){
+        return "managerLookManagement";
+    }
+    @RequestMapping("/employeeLogin")
+    public String employeeLogin()throws Exception{
+        return "employeeLogin";
     }
 }
